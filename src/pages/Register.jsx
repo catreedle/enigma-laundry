@@ -2,7 +2,6 @@ import {
   Button,
   Card,
   CardBody,
-  CardFooter,
   Form,
   Input,
 } from "@nextui-org/react";
@@ -10,7 +9,6 @@ import {
 import axios from "axios";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -173,17 +171,6 @@ export const Register = () => {
             {errorMessage}
           </p>
         </CardBody>
-        <CardFooter>
-          <p>
-            Already have an account?{" "}
-            <Link
-              className=" text-primary font-semibold hover:text-white"
-              to="/login"
-            >
-              Login
-            </Link>
-          </p>
-        </CardFooter>
       </Card>
       <ToastContainer position="top-center" />
     </div>

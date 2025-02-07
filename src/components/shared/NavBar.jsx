@@ -77,6 +77,15 @@ export const NavBar = () => {
             Transaksi
           </Link>
         </NavbarItem>
+        <NavbarItem isActive={location.pathname === "/register"}>
+          <Link
+            as={RouterLink}
+            to="/register"
+            aria-current={isActivePage("/register")}
+          >
+            Register
+          </Link>
+        </NavbarItem>
         <NavbarItem className=" text-primary cursor-pointer" onClick={handleLogout}>
           Logout
         </NavbarItem>
@@ -105,9 +114,18 @@ export const NavBar = () => {
           <Link
             as={RouterLink}
             to="/transaksi"
-            aria-current={isActivePage("/produk")}
+            aria-current={isActivePage("/transaksi")}
           >
             Transaksi
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem isActive={location.pathname === "/register"}>
+          <Link
+            as={RouterLink}
+            to="/register"
+            aria-current={isActivePage("/register")}
+          >
+            Register
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem

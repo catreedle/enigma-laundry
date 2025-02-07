@@ -2,7 +2,6 @@ import {
   Button,
   Card,
   CardBody,
-  CardFooter,
   Form,
   Input,
 } from "@nextui-org/react";
@@ -10,7 +9,7 @@ import {
 import axios from "axios";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import PropTypes from "prop-types";
@@ -47,8 +46,7 @@ export const Login = ({ setIsLoggedIn }) => {
       navigate("/", { replace: true });
     } catch (error) {
       const errMessage =
-        error.response?.data?.status?.description ||
-        "An unexpected error occurred.";
+        "Invalid credential.";
       console.log(error);
       setErrorMessage(errMessage);
     } finally {
@@ -117,17 +115,6 @@ export const Login = ({ setIsLoggedIn }) => {
             {errorMessage}
           </p>
         </CardBody>
-        <CardFooter>
-          <p>
-            Don&apos;t have an account?{" "}
-            <Link
-              className=" text-primary font-semibold hover:text-white"
-              to="/register"
-            >
-              Register
-            </Link>
-          </p>
-        </CardFooter>
       </Card>
     </div>
   );

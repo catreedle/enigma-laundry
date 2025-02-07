@@ -35,7 +35,6 @@ function App() {
           element={<Login setIsLoggedIn={setIsLoggedIn} />}
           path="/login"
         />
-        <Route element={<Register />} path="/register" />
         <Route
           element={
             isLoggedIn ? (
@@ -52,6 +51,7 @@ function App() {
           <Route element={<ProductManagement />} path="/produk" />
           <Route element={<CustomerManagement />} path="/customer" />
           <Route element={<Transaction />} path="/transaksi" />
+          <Route element={<Register />} path="/register" />
         </Route>
       </Routes>
     </>
